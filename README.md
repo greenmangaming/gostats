@@ -4,7 +4,7 @@
 At Green Man Gaming we have a large number of services that run and we have a
 requirement to monitor them all.
 
-To do this we rely on have stats we can cURL out. We have this via
+To do this we rely on have stats we can cURL out. We have this for Scala via
 [Ostrich](https://github.com/twitter/ostrich) from the guys over at
 [Twitter](https://twitter.com/twitteross). However, for Google Go we needed something
 similar and couldn't find something suitable.
