@@ -161,6 +161,28 @@ func (s *StatServe) Label(name string, value string) {
 	s.labels[name] = value
 }
 
+/*
+ * ResetMetric deletes a metric entry.
+ */
+func (s *StatServe) ResetMetric(name string) {
+	s.metricMutex.Lock()
+	if _, ok := s.metrics[name]; ok {
+		delete(s.metrics, name)
+	}
+	s.metricMutex.Unlock()
+}
+
+/*
+ * ResetCounter deletes a counter.
+ */
+func (s *StatServe) ResetCounter(name string) {
+	s.counterMutex.Lock()
+	if _, ok := s.counters[name]; ok {
+		delete(s.counters, name)
+	}
+	s.counterMutex.Unlock()
+}
+
 // A default Stats singleton for us
 var Stats = &StatServe{
 	counters: make(map[string]int),
