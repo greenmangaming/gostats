@@ -3,6 +3,10 @@
 *.a
 *.so
 
+# temp files
+*.swp
+*.swo
+
 # Folders
 _obj
 _test
